@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset = "UTF-8" />
+  <link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+crossorigin="anonymous"></script>
+</head>
+
+<div class="jumbotron">
+	<h1>CS 2150 Gradebook Result</h1>
+	<br>
+
+		<div class="col">
+			<table class="table">
+				<tr>
+					<th width="250">Category</th>
+					<th width="250">Grade</th>
+					<th width="350">Percentage of Final Grade</th>
+					<th>Weighted Grade</th>
+				</tr>
+				<tr>
+					<td width="250">Final Exam</td>
+					<td width="250">{{gradebook.final_actual}} / {{gradebook.final_max}} = {{final_percentage}}%</td>
+					<td>25%</td>
+					<td>{{final_percentage}} &times 25% = {{final_weighted}}</td>
+				</tr>
+				<tr>
+					<td width="250">Midterm 1</td>
+					<td width="250">{{gradebook.exam_1_actual}} / {{gradebook.exam_1_max}} = {{exam_1_percentage}}%</td>
+					<td>15%</td>
+					<td>{{exam_1_percentage}} &times 15% = {{exam_1_weighted}}</td>
+				</tr>
+				<tr>
+					<td width="250">Midterm 2</td>
+					<td width="250">{{gradebook.exam_2_actual}} / {{gradebook.exam_2_max}} = {{exam_2_percentage}}%</td>
+					<td>15%</td>
+					<td>{{exam_2_percentage}} &times 15% = {{exam_2_weighted}}</td>
+				</tr>
+				<tr>
+					<td width="250">Labs</td>
+					<td width="250">{{lab_actual}} / {{lab_max}} = {{lab_percentage}}%</td>
+					<td>45%</td>
+					<td>{{lab_percentage}} &times 45% = {{lab_weighted}}</td>
+				</tr>
+			</table>
+		</div>
+
+		<br><br>
+		<div class="col">
+			<table class="table">
+				<tr>
+					<td width="250"><b>Final Grade</b></td>
+					<td>{{gradebook.grade}}</td>
+				</tr>
+				<tr>
+					<td width="250"><b>Estimated Letter Grade</b></td>
+					<td>{{gradebook.letterGrade}}</td>
+				</tr>
+			</table>
+		</div>
+		<br><br><br>
+
+	<input type='button' value='Back' class="btn btn-primary" onclick="javascript:history.go(-1);">
+</html>
